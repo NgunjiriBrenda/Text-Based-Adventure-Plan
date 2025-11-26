@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon's Escape - Rust Text Adventure Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e94560;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #e94560;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(233, 69, 96, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-bottom: 2px solid #e94560;
+        }
+
+        .dragon-title {
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 0 0 10px #e94560;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #0f3460;
+        }
+
+        .section {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(15, 52, 96, 0.3);
+            border-radius: 10px;
+            border-left: 4px solid #e94560;
+        }
+
+        .section h2 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .feature {
+            background: rgba(233, 69, 96, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e94560;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #0f3460;
+            font-family: 'Courier New', monospace;
+            color: #4fc3f7;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .command {
+            color: #69f0ae;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #ff6b8b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .screenshot {
+            width: 100%;
+            border: 2px solid #e94560;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .game-art {
+            text-align: center;
+            font-family: monospace;
+            background: #000;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #e94560;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e94560;
+            color: #0f3460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="dragon-title">🐉 DRAGON'S ESCAPE 🏰</div>
+            <div class="subtitle">A Rust-Powered Text Adventure Game</div>
+        </header>
+
+        <div class="section">
+            <h2>🎮 About the Game</h2>
+            <p>Embark on an epic adventure through a dragon's castle! Explore mysterious rooms, solve puzzles, and discover hidden treasures in this terminal-based text adventure game built entirely in Rust.</p>
+            
+            <div class="game-art">
+                <pre>
+┌─────────────────┐
+│      ___        │
+│     /___\       │
+│    🐉|_|🐉      │
+│    💎💰💎     │
+│   📦TREASURE📦  │
+│                 │
+│     🪑THRONE🪑   │
+└─────────────────┘
+                </pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <strong>🎨 Visual ASCII Art</strong>
+                    <p>Beautiful room representations with detailed ASCII artwork</p>
+                </div>
+                <div class="feature">
+                    <strong>🧭 Interactive Compass</strong>
+                    <p>Visual navigation system showing available directions</p>
+                </div>
+                <div class="feature">
+                    <strong>🐉 Themed Adventure</strong>
+                    <p>Dragon-themed castle exploration with treasure hunting</p>
+                </div>
+                <div class="feature">
+                    <strong>⚡ Built with Rust</strong>
+                    <p>High-performance, memory-safe systems programming</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Installation & Play</h2>
+            <p><strong>Prerequisites:</strong> Rust and Cargo installed</p>
+            
+            <div class="code-block">
+                <span class="command"># Clone and play</span><br>
+                git clone https://github.com/NgunjiriBrenda/Text-Based-Adventure-Plan.git<br>
+                cd Text-Based-Adventure-Plan<br>
+                cargo run
+            </div>
+
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="https://github.com/NgunjiriBrenda/Text-Based-Adventure-Plan" class="btn">📁 View on GitHub</a>
+                <a href="https://github.com/NgunjiriBrenda/Text-Based-Adventure-Plan/archive/refs/heads/main.zip" class="btn">💾 Download Source</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 How to Play</h2>
+            <div class="code-block">
+                <span class="command">Available Commands:</span><br>
+                go north/south/east/west  # Move between rooms<br>
+                look                      # Examine current room<br>
+                map                       # Show castle map<br>
+                help                      # Display help menu<br>
+                quit                      # Exit game
+            </div>
+            
+            <p><strong>Game Goal:</strong> Start in the Dungeon Cell and find your way to the Throne Room to discover the dragon's treasure!</p>
+        </div>
+
+        <div class="section">
+            <h2>🏗️ Project Structure</h2>
+            <div class="code-block">
+                Text-Based-Adventure-Plan/<br>
+                ├── src/<br>
+                │   └── main.rs          # Game source code<br>
+                ├── Cargo.toml           # Rust configuration<br>
+                ├── index.html           # This documentation<br>
+                ├── README.md            # Project documentation<br>
+                └── Docs/                # Additional documentation
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>👥 Contributing</h2>
+            <p>This is an open-source project! Feel free to:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Report bugs or suggest features</li>
+                <li>Submit pull requests with improvements</li>
+                <li>Fork the project for your own modifications</li>
+                <li>Share with other Rust enthusiasts!</li>
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <p>Made with ❤️ and 🦀 Rust</p>
+            <p>© 2024 Brenda Ngunjiri - Dragon's Escape Text Adventure</p>
+        </footer>
+    </div>
+</body>
+</html>
