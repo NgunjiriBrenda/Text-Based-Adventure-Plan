@@ -63,66 +63,6 @@
             font-size: 1.5em;
         }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 15px 0;
-        }
-
-        .feature {
-            background: rgba(233, 69, 96, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #e94560;
-        }
-
-        .code-block {
-            background: #1a1a2e;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #0f3460;
-            font-family: 'Courier New', monospace;
-            color: #4fc3f7;
-            margin: 10px 0;
-            overflow-x: auto;
-        }
-
-        .command {
-            color: #69f0ae;
-            font-weight: bold;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #e94560;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            margin: 5px;
-        }
-
-        .btn:hover {
-            background: #ff6b8b;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
-        }
-
-        .game-art {
-            text-align: center;
-            font-family: monospace;
-            background: #000;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border: 1px solid #e94560;
-        }
-
         .web-terminal {
             background: #000;
             color: #0f0;
@@ -192,18 +132,39 @@
         .error {
             color: #ff6b8b;
         }
+
+        .btn {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .btn:hover {
+            background: #ff6b8b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div class="dragon-title">🐉 DRAGON'S ESCAPE 🏰</div>
-            <div class="subtitle">A Rust-Powered Text Adventure Game</div>
+            <div class="subtitle">A Rust Text Adventure Game - Web Demo</div>
         </header>
 
         <div class="section">
-            <h2>🎮 Web Demo - Play in Browser!</h2>
-            <p>Try the web version of Dragon's Escape below! This is a JavaScript demo that mimics the full Rust game.</p>
+            <h2>🎮 Play Dragon's Escape</h2>
+            <p>Explore the dragon's castle and find the hidden treasure!</p>
             
             <!-- Web Terminal Game -->
             <div class="web-terminal" id="web-terminal">
@@ -243,62 +204,9 @@
             </div>
         </div>
 
-        <div class="section">
-            <h2>🎯 How to Play</h2>
-            <div class="code-block">
-                <span class="command">Available Commands:</span><br>
-                go north/south/east/west  # Move between rooms<br>
-                look                      # Examine current room<br>
-                map                       # Show castle map<br>
-                help                      # Display help menu<br>
-                quit                      # Exit game
-            </div>
-            
-            <p><strong>Game Goal:</strong> Start in the Dungeon Cell and find your way to the Throne Room to discover the dragon's treasure!</p>
-        </div>
-
-        <div class="section">
-            <h2>🚀 Full Game Experience</h2>
-            <p>This web demo shows the basic gameplay. For the full experience with ASCII art, animations, and the complete Rust implementation:</p>
-            
-            <div class="code-block">
-                <span class="command"># Install and play the full Rust version</span><br>
-                git clone https://github.com/NgunjiriBrenda/Text-Based-Adventure-Plan.git<br>
-                cd Text-Based-Adventure-Plan<br>
-                cargo run
-            </div>
-
-            <div style="text-align: center; margin: 20px 0;">
-                <a href="https://github.com/NgunjiriBrenda/Text-Based-Adventure-Plan" class="btn">📁 View on GitHub</a>
-                <a href="https://github.com/NgunjiriBrenda/Text-Based-Adventure-Plan/archive/refs/heads/main.zip" class="btn">💾 Download Source</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>🎨 Features</h2>
-            <div class="feature-grid">
-                <div class="feature">
-                    <strong>🎨 Visual ASCII Art</strong>
-                    <p>Beautiful room representations with detailed ASCII artwork</p>
-                </div>
-                <div class="feature">
-                    <strong>🧭 Interactive Compass</strong>
-                    <p>Visual navigation system showing available directions</p>
-                </div>
-                <div class="feature">
-                    <strong>🐉 Themed Adventure</strong>
-                    <p>Dragon-themed castle exploration with treasure hunting</p>
-                </div>
-                <div class="feature">
-                    <strong>⚡ Built with Rust</strong>
-                    <p>High-performance, memory-safe systems programming</p>
-                </div>
-            </div>
-        </div>
-
         <footer class="footer">
             <p>Made with ❤️ and 🦀 Rust</p>
-            <p>© 2024 Brenda Ngunjiri - Dragon's Escape Text Adventure</p>
+            <p>© 2024 Dragon's Escape Text Adventure</p>
         </footer>
     </div>
 
@@ -311,44 +219,14 @@
         const rooms = {
             'Dungeon Cell': {
                 description: 'You wake up in a cold, dark dungeon cell. Stone walls surround you, and there\'s a rusty door to the NORTH.',
-                asciiArt: `
-    ┌─────────────────┐
-    │    🚪░░░░░░░    │
-    │   ░░░▒▒▒▒▒░░░   │
-    │  ░░▒▒     ▒▒░░  │
-    │ ░░▒▒  🕳️   ▒▒░░ │
-    │ ░░▒▒       ▒▒░░ │
-    │  ░░▒▒▒▒▒▒▒▒░░   │
-    │   ░░░░░░░░░░    │
-    └─────────────────┘`,
                 exits: { north: 'Hallway' }
             },
             'Hallway': {
                 description: 'You\'re in a torch-lit hallway. The air is damp and cold. Ancient tapestries line the walls, showing dragon battles.',
-                asciiArt: `
-    ┌─────────────────┐
-    │ 🕯️             🕯️ │
-    │                 │
-    │    ────────     │
-    │                 │
-    │ 🕯️             🕯️ │
-    │                 │
-    │    ────────     │
-    └─────────────────┘`,
                 exits: { south: 'Dungeon Cell', east: 'Throne Room' }
             },
             'Throne Room': {
                 description: 'A magnificent room with a giant stone throne carved like a dragon! Golden treasures sparkle in torchlight.',
-                asciiArt: `
-    ┌─────────────────┐
-    │      ___        │
-    │     /___\       │
-    │    🐉|_|🐉      │
-    │    💎💰💎     │
-    │   📦TREASURE📦  │
-    │                 │
-    │     🪑THRONE🪑   │
-    └─────────────────┘`,
                 exits: { west: 'Hallway' }
             }
         };
